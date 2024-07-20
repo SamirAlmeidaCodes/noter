@@ -28,10 +28,37 @@ const App = () => {
     setSelectedNote(note);
   };
 
+  const handleCreateNote = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/notes`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: '' }),
+      });
+      const newNote = await response.json();
+      setNotes([...notes, newNote]);
+      setSelectedNote(newNote);
+    } catch (error) {
+      console.error('Failed to create note:', error);
+    }
+  };
+
+  const handleDeleteNote = async (id) => {
+    try {
+      await fetch(`${process.env.REACT_APP_API_URL}/notes/${id}`, {
+        method: 'DELETE',
+      });
+      setNotes(notes.filter(note => note.id !== id));
+      setSelectedNote(null);
+    } catch (error) {
+      console.error('Failed to delete note:', error);
+    }
+  };
+
   return (
     <div className="app-container">
-      <Sidebar notes={notes} onNoteSelect={handleNoteSelect} />
-      <NoteEditor note={selectedNote} />
+      <Sidebar notes={notes} onNoteSelect={handleNoteSelect} onCreateNote={handleCreateNote} />
+      <NoteEditor note={selectedNote} onDelete={handleDeleteNote} />
     </div>
   );
 };

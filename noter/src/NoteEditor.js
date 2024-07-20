@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const NoteEditor = ({ note }) => {
+const NoteEditor = ({ note, onSave, onDelete }) => {
   const [content, setContent] = useState(note ? note.content : '');
 
   useEffect(() => {
@@ -34,6 +34,9 @@ const NoteEditor = ({ note }) => {
         onChange={(e) => setContent(e.target.value)}
         placeholder="Type your note here..."
       />
+      {note && (
+        <button onClick={() => onDelete(note.id)}>Delete Note</button>
+      )}
     </div>
   );
 };
