@@ -5,6 +5,7 @@ const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -13,10 +14,10 @@ const secretKey = '12345'; // Use a secure key in production
 
 // Database connection pool
 const pool = mysql.createPool({
-  host: '185.27.133.16',
-  user: 'erpteste',
-  password: '*3-eY1gKQiT6p2',
-  database: 'erpteste_noter',
+  host: 'Your Host',
+  user: 'YourUser',
+  password: 'Your Password',
+  database: 'Your Database',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -125,5 +126,4 @@ app.delete('/api/notes/:id', authenticate, (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log('Server running on port 3001');
-});
+console.log('Server running on port 3001');
