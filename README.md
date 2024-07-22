@@ -1,11 +1,21 @@
 # noter
 
-Noter is a personal project made with the main objective of creating a note taking web app that suits my (Samir Almeida) needs, both on the phone and computer.
+Noter is one of my first open-source projects.
 
-If you wish to use this or to take it as a base for your own note taking app or other project you can as long as respecting the license.
+I started this with the main intent of not only getting better at javascript but also with the whole organization processes in the file managar when coding a project.
 
-This project also did help me developing my front-end skills as my main strengths are back-end.
+I also wanted to develop a user system for the first time in javascript, as i already had done it in C++, C#, Python and PHP I also wanted to learn that here as i did.
 
-To use this project as it is you can take the build folder and upload it to your server to use it everywhere.
+Also learned how to develop a auto-saving system (which is crazy easy).
 
-If you wish to change it, you can take the code that is in the repository, and respecting the license, you can change it as you wish.
+Overall this project not only helped me develop a lot my skills but also helped me getting a bigger eco-system for myself (and my future eco-system of Saas's) to use. Now i have a fully costumizable and synced notepad that isn't laggy as the one from Apple.
+
+If you also want to use this project you should have a mysql database with 2 tables, the 'tbl_user' for users and 'tbl_notes' for notes.
+
+In the 'tbl_users' it should have the 'user_id' with auto increment, the 'user', 'password' and 'notes' where 'notes' is a foreign key that will connect to the other column's id.
+
+In the 'tbl_notes' it should have the 'note_id', text and 'user_id' which is the one that connects to the other column.
+
+Having all of this setup should let you work with every code that there is here.
+
+As this is fully open-source feel free to take the code and costumize it to satisfy your needs.
