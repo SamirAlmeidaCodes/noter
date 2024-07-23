@@ -1,0 +1,41 @@
+.note-editor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .editor-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  textarea {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+  
+  textarea:focus {
+    border: none;
+    outline: none;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #ff4b4b;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff0000;
+  }
+  
