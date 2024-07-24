@@ -19,3 +19,5 @@ In the 'tbl_notes' it should have the 'note_id', text and 'user_id' which is the
 Having all of this setup should let you work with every code that there is here.
 
 As this is fully open-source feel free to take the code and costumize it to satisfy your needs.
+
+This project now also has the option for you to costumize the letters and everything you are writting.
